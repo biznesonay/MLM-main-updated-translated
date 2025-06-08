@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-08 08:38+0000\n"
-"PO-Revision-Date: 2025-06-08 14:08+0500\n"
+"PO-Revision-Date: 2025-06-08 19:22+0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ru\n"
@@ -119,28 +119,28 @@ msgstr "Ранг"
 #: shortcodes/profile.php:43 shortcodes/profile2.php:100 templates/structure-p.php:145
 #: templates/structure-p.php:193
 msgid "PCC"
-msgstr "Личный Товарооборот (ЛТ)"
+msgstr "PCC"
 
 #: shortcodes/profile.php:45 shortcodes/profile2.php:102 templates/structure-p.php:146
 #: templates/structure-p.php:194
 msgid "SCC"
-msgstr "Структурный Товарооброт (СТ)"
+msgstr "SCC"
 
 #: shortcodes/profile.php:47 shortcodes/profile2.php:104
 msgid "Direct Reward"
-msgstr "Прямая награда"
+msgstr "Прямое вознаграждение (ПВ)"
 
 #: shortcodes/profile.php:49 shortcodes/profile2.php:106
 msgid "Structural Reward"
-msgstr "Структурная награда"
+msgstr "Структурное вознаграждение (СВ)"
 
 #: shortcodes/profile.php:51 shortcodes/profile2.php:108
 msgid "Management Reward"
-msgstr "Менеджерская награда"
+msgstr "Вознаграждение за руководство (ВЗР)"
 
 #: shortcodes/profile.php:53 shortcodes/profile2.php:110
 msgid "All Rewards"
-msgstr "Все награды"
+msgstr "Все вознаграждения"
 
 #: shortcodes/profile.php:61 shortcodes/profile2.php:116
 msgid "Personal Transaction Table"
@@ -300,7 +300,7 @@ msgstr "Дата и время"
 #: templates/circulation.php:34 templates/distributor.php:33 templates/family-tree.php:32
 #: templates/rank.php:24 templates/structure-p.php:54 mlm-marketing.php:34
 msgid "Family Panel"
-msgstr "Семейная панель"
+msgstr "Дерево Дистрибьюторов"
 
 #: shortcodes/register.php:48
 msgid "User Registration"
@@ -444,7 +444,7 @@ msgstr "Поиск"
 
 #: templates/circulation.php:53
 msgid "Circulation Commodity"
-msgstr "Циркулирующий товар"
+msgstr "Товарооборот"
 
 #: templates/circulation.php:59
 msgid "Select Distributor"
