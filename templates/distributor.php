@@ -49,12 +49,12 @@ $users = $datatable->get_all_current_distrubutor_city();
     <div class="FRuy">
         <form class="form_cla" id="distributor-register-form" action="<?= admin_url('admin-post.php'); ?>"
               method="POST">
-            <h3><?php _e('Distributor Register', 'distributor-register'); ?></h3>
-            <label for="distributor_name"><?php _e('Name', 'distributor-register'); ?> <strong>*</strong></label>
+            <h3><?php _e('Регистрация дистрибьютора', 'distributor-register'); ?></h3>
+            <label for="distributor_name"><?php _e('Имя', 'distributor-register'); ?> <strong>*</strong></label>
             <input type="text" name="mlm_distributor_name" id="distributor_name" required>
-            <label for="distributor_phone"><?php _e('Phone', 'distributor-register'); ?> <strong>*</strong></label>
+            <label for="distributor_phone"><?php _e('Телефон', 'distributor-register'); ?> <strong>*</strong></label>
             <input type="text" name="mlm_distributor_phone" id="distributor_phone" required value="+7 (___) ___-__-__">
-            <label for="distributor_sponsor"><?php _e('Sponsor ID', 'distributor-register'); ?><strong>*</strong></label>
+            <label for="distributor_sponsor"><?php _e('ID спонсора', 'distributor-register'); ?><strong>*</strong></label>
             <select class="ui search dropdown" name="mlm_distributor_sponsor" id="distributor_sponsor" required>
                 <option value=""><?php _e('Select Sponsor', 'marketing'); ?></option>
                 <?php foreach ($sponsors as $sponsor) { ?>
@@ -63,7 +63,7 @@ $users = $datatable->get_all_current_distrubutor_city();
             </select>
 
             <input type="hidden" name="action" value="mlm_distributor_register">
-            <input type="submit" name="submit" value="Create">
+            <input type="submit" name="submit" value="Создать">
         </form>
     </div>
     <h3><?php _e('Current Users', 'marketing'); ?></h3>

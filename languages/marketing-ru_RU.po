@@ -1,0 +1,611 @@
+# Russian translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-08 08:38+0000\n"
+"PO-Revision-Date: 2025-06-08 14:08+0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.6\n"
+
+#: includes/Datatable_List.php:70 includes/Datatable_List.php:87
+msgid "Error to delete"
+msgstr "Ошибка удаления"
+
+#: includes/Datatable_List.php:76 includes/Datatable_List.php:101
+msgid "Successfully deleted!"
+msgstr "Успешно удалено!"
+
+#: includes/Datatable_List.php:79
+msgid "Exist children, can not delete!"
+msgstr "Есть дочерние элементы, удалить нельзя!"
+
+#: includes/Datatable_List.php:153 services/RegisterUser.php:13
+msgid "Phone already exits"
+msgstr "Телефон уже существует"
+
+#: services/RewordHistory.php:7
+msgid "Error to add!"
+msgstr "Ошибка добавления!"
+
+#: services/RewordHistory.php:33
+msgid "Successfully added!"
+msgstr "Успешно добавлено!"
+
+#: services/RegisterUser.php:7
+msgid "Success"
+msgstr "Успех"
+
+#: shortcodes/login.php:3
+msgid "User Login"
+msgstr "Вход пользователя"
+
+#: shortcodes/login.php:9
+msgid "Email or password field is empty."
+msgstr "Поле электронной почты или пароля пустое."
+
+#: shortcodes/login.php:15
+msgid "Wrong credentials."
+msgstr "Неверные учетные данные."
+
+#: shortcodes/login.php:18 shortcodes/register.php:88
+msgid "Email"
+msgstr "Email"
+
+#: shortcodes/login.php:20
+msgid "Password"
+msgstr "Пароль"
+
+#: shortcodes/login.php:24 shortcodes/register.php:127
+msgid "Submit"
+msgstr "Отправить"
+
+#: shortcodes/login.php:27
+msgid "Welcome Back"
+msgstr "С возвращением"
+
+#: shortcodes/login.php:28
+msgid "Go To Profile"
+msgstr "Перейти в профиль"
+
+#: shortcodes/login.php:47 shortcodes/register.php:226
+msgid "Please enter a valid email address"
+msgstr "Пожалуйста, введите корректный адрес электронной почты"
+
+#: shortcodes/login.php:49
+msgid "Please provide a password"
+msgstr "Пожалуйста, укажите пароль"
+
+#: shortcodes/login.php:50
+msgid "Your password must be at least 5 characters long"
+msgstr "Ваш пароль должен содержать не менее 5 символов"
+
+#: shortcodes/profile.php:18 shortcodes/profile2.php:78
+msgid "User Profile"
+msgstr "Профиль пользователя"
+
+#: shortcodes/profile.php:21 shortcodes/profile2.php:82 shortcodes/register.php:83
+#: templates/rewards-history.php:69 templates/rewards-history.php:97
+#: templates/distributor.php:53 templates/distributor.php:75 templates/distributor.php:106
+msgid "Name"
+msgstr "Имя"
+
+#: shortcodes/profile.php:28 shortcodes/profile2.php:90
+msgid "User id"
+msgstr "ID пользователя"
+
+#: shortcodes/profile.php:34 shortcodes/profile2.php:93 shortcodes/register.php:93
+#: templates/distributor.php:55 templates/distributor.php:77 templates/distributor.php:108
+msgid "Phone"
+msgstr "Телефон"
+
+#: shortcodes/profile.php:41 shortcodes/profile2.php:98 shortcodes/profile2.php:169
+#: shortcodes/profile2.php:195 templates/rank.php:48 templates/rank.php:74
+#: templates/structure-p.php:142 templates/structure-p.php:190
+msgid "Rank"
+msgstr "Ранг"
+
+#: shortcodes/profile.php:43 shortcodes/profile2.php:100 templates/structure-p.php:145
+#: templates/structure-p.php:193
+msgid "PCC"
+msgstr "Личный Товарооборот (ЛТ)"
+
+#: shortcodes/profile.php:45 shortcodes/profile2.php:102 templates/structure-p.php:146
+#: templates/structure-p.php:194
+msgid "SCC"
+msgstr "Структурный Товарооброт (СТ)"
+
+#: shortcodes/profile.php:47 shortcodes/profile2.php:104
+msgid "Direct Reward"
+msgstr "Прямая награда"
+
+#: shortcodes/profile.php:49 shortcodes/profile2.php:106
+msgid "Structural Reward"
+msgstr "Структурная награда"
+
+#: shortcodes/profile.php:51 shortcodes/profile2.php:108
+msgid "Management Reward"
+msgstr "Менеджерская награда"
+
+#: shortcodes/profile.php:53 shortcodes/profile2.php:110
+msgid "All Rewards"
+msgstr "Все награды"
+
+#: shortcodes/profile.php:61 shortcodes/profile2.php:116
+msgid "Personal Transaction Table"
+msgstr "Таблица личных транзакций"
+
+#: shortcodes/profile.php:65 shortcodes/profile.php:88 shortcodes/profile2.php:121
+#: shortcodes/profile2.php:129
+msgid "Sl no."
+msgstr "№"
+
+#: shortcodes/profile.php:66 shortcodes/profile.php:89 shortcodes/profile2.php:122
+#: shortcodes/profile2.php:130 templates/circulation.php:95 templates/circulation.php:125
+msgid "Amount"
+msgstr "Сумма"
+
+#: shortcodes/profile.php:67 shortcodes/profile.php:90 shortcodes/profile2.php:123
+#: shortcodes/profile2.php:131 templates/circulation.php:96 templates/circulation.php:126
+msgid "Transaction Date"
+msgstr "Дата транзакции"
+
+#: shortcodes/profile.php:97 shortcodes/profile2.php:138 templates/rewards-history.php:62
+msgid "Rewards history"
+msgstr "История наград"
+
+#: shortcodes/profile.php:103 shortcodes/profile.php:127 shortcodes/profile2.php:143
+#: shortcodes/profile2.php:151 shortcodes/profile2.php:166 shortcodes/profile2.php:192
+#: templates/rewards-history.php:67 templates/rewards-history.php:95
+#: templates/circulation.php:91 templates/circulation.php:121 templates/distributor.php:73
+#: templates/distributor.php:104 templates/rank.php:45 templates/rank.php:71
+#: templates/structure-p.php:139 templates/structure-p.php:187
+msgid "Sl no"
+msgstr "№"
+
+#: shortcodes/profile.php:104 shortcodes/profile.php:128 shortcodes/profile2.php:167
+#: shortcodes/profile2.php:193 templates/rewards-history.php:68
+#: templates/rewards-history.php:96 templates/rank.php:46 templates/rank.php:72
+msgid "User ID"
+msgstr "ID пользователя"
+
+#: shortcodes/profile.php:105 shortcodes/profile.php:129 shortcodes/profile2.php:144
+#: shortcodes/profile2.php:152 templates/rewards-history.php:70
+#: templates/rewards-history.php:98
+msgid "Payout Rewards"
+msgstr "Выплата наград"
+
+#: shortcodes/profile.php:106 shortcodes/profile.php:130 shortcodes/profile2.php:145
+#: shortcodes/profile2.php:153 templates/rewards-history.php:72
+#: templates/rewards-history.php:100
+msgid "Payout Date and Time"
+msgstr "Дата и время выплаты"
+
+#: shortcodes/profile.php:107 shortcodes/profile.php:131 shortcodes/profile2.php:146
+#: shortcodes/profile2.php:154 templates/rewards-history.php:71
+#: templates/rewards-history.php:99
+msgid "After account balance"
+msgstr "Баланс после операции"
+
+#: shortcodes/profile.php:138
+msgid "Family tree"
+msgstr "Дерево семьи"
+
+#: shortcodes/profile.php:145 templates/family-tree.php:72
+msgid "Management"
+msgstr "Управление"
+
+#: shortcodes/profile.php:422
+msgid "PLease Login or register to view profile."
+msgstr "Пожалуйста, войдите или зарегистрируйтесь для просмотра профиля."
+
+#: shortcodes/profile.php:423 templates/overview.php:29
+msgid "Login"
+msgstr "Вход"
+
+#: shortcodes/profile.php:424
+msgid "Register"
+msgstr "Регистрация"
+
+#: shortcodes/profile.php:505 shortcodes/profile2.php:291 shortcodes/profile2.php:321
+#: shortcodes/profile2.php:340 templates/rewards-history.php:110
+#: templates/circulation.php:165 templates/distributor.php:166 templates/rank.php:92
+#: templates/structure-p.php:214
+msgid "Search:"
+msgstr "Поиск:"
+
+#: shortcodes/profile.php:506 shortcodes/profile2.php:292 shortcodes/profile2.php:322
+#: shortcodes/profile2.php:341 templates/rewards-history.php:111
+#: templates/circulation.php:166 templates/distributor.php:167 templates/rank.php:93
+#: templates/structure-p.php:215
+msgid "Show _MENU_ entries"
+msgstr "Показать _MENU_ записей"
+
+#: shortcodes/profile.php:507 shortcodes/profile2.php:293 shortcodes/profile2.php:323
+#: shortcodes/profile2.php:342 templates/rewards-history.php:112
+#: templates/circulation.php:167 templates/distributor.php:168 templates/rank.php:94
+#: templates/structure-p.php:216
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Показано с _START_ по _END_ из _TOTAL_ записей"
+
+#: shortcodes/profile.php:508 shortcodes/profile2.php:294 shortcodes/profile2.php:324
+#: shortcodes/profile2.php:343 templates/rewards-history.php:113
+#: templates/circulation.php:168 templates/distributor.php:169 templates/rank.php:95
+#: templates/structure-p.php:217
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Показано 0 из 0 записей"
+
+#: shortcodes/profile.php:509 shortcodes/profile2.php:295 shortcodes/profile2.php:325
+#: shortcodes/profile2.php:344 templates/rewards-history.php:114
+#: templates/circulation.php:169 templates/distributor.php:170 templates/rank.php:96
+#: templates/structure-p.php:218
+msgid "No data available in table"
+msgstr "Нет данных для отображения"
+
+#: shortcodes/profile.php:511 shortcodes/profile2.php:297 shortcodes/profile2.php:327
+#: shortcodes/profile2.php:346 templates/rewards-history.php:116
+#: templates/circulation.php:171 templates/distributor.php:172 templates/rank.php:98
+#: templates/structure-p.php:220
+msgid "First"
+msgstr "Первая"
+
+#: shortcodes/profile.php:512 shortcodes/profile2.php:298 shortcodes/profile2.php:328
+#: shortcodes/profile2.php:347 templates/rewards-history.php:117
+#: templates/circulation.php:172 templates/distributor.php:173 templates/rank.php:99
+#: templates/structure-p.php:221
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: shortcodes/profile.php:513 shortcodes/profile2.php:299 shortcodes/profile2.php:329
+#: shortcodes/profile2.php:348 templates/rewards-history.php:118
+#: templates/circulation.php:173 templates/distributor.php:174 templates/rank.php:100
+#: templates/structure-p.php:222
+msgid "Next"
+msgstr "Следующая"
+
+#: shortcodes/profile.php:514 shortcodes/profile2.php:300 shortcodes/profile2.php:330
+#: shortcodes/profile2.php:349 templates/rewards-history.php:119
+#: templates/circulation.php:174 templates/distributor.php:175 templates/rank.php:101
+#: templates/structure-p.php:223
+msgid "Last"
+msgstr "Последняя"
+
+#: shortcodes/profile2.php:161 templates/rewards-history.php:36
+#: templates/circulation.php:44 templates/rank.php:34 templates/rank.php:40
+msgid "Date of Rank's change"
+msgstr "Дата смены ранга"
+
+#: shortcodes/profile2.php:168 shortcodes/profile2.php:194 templates/rank.php:47
+#: templates/rank.php:73
+msgid "User Name"
+msgstr "Имя пользователя"
+
+#: shortcodes/profile2.php:170 shortcodes/profile2.php:196 templates/rank.php:49
+#: templates/rank.php:75
+msgid "Date and Time"
+msgstr "Дата и время"
+
+#: shortcodes/profile2.php:203 templates/rewards-history.php:26
+#: templates/circulation.php:34 templates/distributor.php:33 templates/family-tree.php:32
+#: templates/rank.php:24 templates/structure-p.php:54 mlm-marketing.php:34
+msgid "Family Panel"
+msgstr "Семейная панель"
+
+#: shortcodes/register.php:48
+msgid "User Registration"
+msgstr "Регистрация пользователя"
+
+#: shortcodes/register.php:54
+msgid "All fields is requird."
+msgstr "Все поля обязательны."
+
+#: shortcodes/register.php:60
+msgid "Данный номер уже зарегистрирован"
+msgstr "Данный номер уже зарегистрирован"
+
+#: shortcodes/register.php:66
+msgid "Пожалуйста, подтвердите, что вы не робот"
+msgstr "Пожалуйста, подтвердите, что вы не робот"
+
+#: shortcodes/register.php:72
+msgid "Слишком много попыток регистрации. Попробуйте позже."
+msgstr "Слишком много попыток регистрации. Попробуйте позже."
+
+#: shortcodes/register.php:78
+msgid "New user successfully registered!."
+msgstr "Новый пользователь успешно зарегистрирован!"
+
+#: shortcodes/register.php:99
+msgid "City ID"
+msgstr "ID города"
+
+#: shortcodes/register.php:101
+msgid "Select City"
+msgstr "Выберите город"
+
+#: shortcodes/register.php:109 templates/distributor.php:57 templates/distributor.php:79
+#: templates/distributor.php:110 templates/structure-p.php:143
+#: templates/structure-p.php:191
+msgid "Sponsor ID"
+msgstr "ID спонсора"
+
+#: shortcodes/register.php:111 templates/distributor.php:59
+msgid "Select Sponsor"
+msgstr "Выберите спонсора"
+
+#: shortcodes/register.php:225
+msgid "Please enter your name"
+msgstr "Пожалуйста, введите ваше имя"
+
+#: shortcodes/register.php:227
+msgid "Please enter phone number"
+msgstr "Пожалуйста, введите номер телефона"
+
+#: shortcodes/register.php:228
+msgid "Please choose your sponsor"
+msgstr "Пожалуйста, выберите спонсора"
+
+#: templates/overview.php:5
+msgid "MLM Marketing"
+msgstr "MLM Маркетинг"
+
+#: templates/overview.php:7
+msgid "This plugin for multi lavel marketing and rank basis reward."
+msgstr "Этот плагин предназначен для многоуровневого маркетинга и ранговых наград."
+
+#: templates/overview.php:21
+msgid "For Modern user interaction"
+msgstr "Для современного взаимодействия с пользователем"
+
+#: templates/overview.php:31
+msgid "Login using"
+msgstr "Вход с помощью"
+
+#: templates/overview.php:32 templates/overview.php:42 templates/overview.php:52
+msgid "shortcode or a widget."
+msgstr "шорткода или виджета."
+
+#: templates/overview.php:38
+msgid "Registration"
+msgstr "Регистрация"
+
+#: templates/overview.php:40
+msgid "Registration using"
+msgstr "Регистрация с помощью"
+
+#: templates/overview.php:48
+msgid "Profile"
+msgstr "Профиль"
+
+#: templates/overview.php:50
+msgid "Profile using"
+msgstr "Профиль с помощью"
+
+#: templates/rewards-history.php:12 templates/circulation.php:20
+#: templates/distributor.php:19 templates/family-tree.php:18 templates/rank.php:10
+#: templates/structure-p.php:40
+msgid "Distributor panel"
+msgstr "Панель дистрибьютора"
+
+#: templates/rewards-history.php:16 templates/circulation.php:24
+#: templates/distributor.php:23 templates/family-tree.php:22 templates/rank.php:14
+#: templates/structure-p.php:44 mlm-marketing.php:32
+msgid "Commodity Circulation Panel"
+msgstr "Панель оборота товара"
+
+#: templates/rewards-history.php:21 templates/circulation.php:29
+#: templates/distributor.php:28 templates/family-tree.php:27 templates/rank.php:19
+#: templates/structure-p.php:49 templates/structure-p.php:134 mlm-marketing.php:33
+msgid "Structure Panel"
+msgstr "Панель структуры"
+
+#: templates/rewards-history.php:31 templates/circulation.php:39
+#: templates/distributor.php:38 templates/family-tree.php:37 templates/rank.php:29
+#: templates/structure-p.php:59 mlm-marketing.php:35
+msgid "Rewards History"
+msgstr "История наград"
+
+#: templates/rewards-history.php:45
+msgid "History of getting rewards by distributors"
+msgstr "История получения наград дистрибьюторами"
+
+#: templates/rewards-history.php:46
+msgid "Amount of rewards"
+msgstr "Сумма наград"
+
+#: templates/rewards-history.php:49 templates/circulation.php:55
+#: templates/circulation.php:92 templates/circulation.php:122 templates/structure-p.php:140
+#: templates/structure-p.php:188
+msgid "Distributor ID"
+msgstr "ID дистрибьютора"
+
+#: templates/rewards-history.php:58
+msgid "Create"
+msgstr "Создать"
+
+#: templates/tree.php:17 templates/family-tree.php:52
+msgid "Search User"
+msgstr "Поиск пользователя"
+
+#: templates/tree.php:18 templates/family-tree.php:54
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/circulation.php:53
+msgid "Circulation Commodity"
+msgstr "Циркулирующий товар"
+
+#: templates/circulation.php:59
+msgid "Select Distributor"
+msgstr "Выберите дистрибьютора"
+
+#: templates/circulation.php:65
+msgid "Personal Circulation Commodity"
+msgstr "Личный оборот товара"
+
+#: templates/circulation.php:69
+msgid "Additional expenses"
+msgstr "Дополнительные расходы"
+
+#: templates/circulation.php:79
+msgid "Contribution"
+msgstr "Вклад"
+
+#: templates/circulation.php:93 templates/circulation.php:123 templates/structure-p.php:141
+#: templates/structure-p.php:189
+msgid "Distributor Name"
+msgstr "Имя дистрибьютора"
+
+#: templates/circulation.php:94 templates/circulation.php:124
+msgid "Source"
+msgstr "Источник"
+
+#: templates/circulation.php:112
+msgid "site"
+msgstr "сайт"
+
+#: templates/circulation.php:112
+msgid "direct"
+msgstr "прямой"
+
+#: templates/circulation.php:136
+msgid "Somethings wents wrong!"
+msgstr "Что-то пошло не так!"
+
+#: templates/circulation.php:146
+msgid "New Personal Circulation Commodity added!"
+msgstr "Новый личный оборот товара добавлен!"
+
+#: templates/circulation.php:191 templates/circulation.php:233
+#: templates/distributor.php:191
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#: templates/circulation.php:192
+msgid "Do you wont to create Circulation Commodity"
+msgstr "Вы хотите создать запись оборота товара"
+
+#: templates/circulation.php:234
+msgid "You wont be able to revert this!"
+msgstr "Вы не сможете отменить это!"
+
+#: templates/distributor.php:43 templates/family-tree.php:42 templates/structure-p.php:64
+#: mlm-marketing.php:36
+msgid "Date of Rank’s change"
+msgstr "Дата смены ранга"
+
+#: templates/distributor.php:52
+msgid "Distributor Register"
+msgstr "Регистрация дистрибьютора"
+
+#: templates/distributor.php:69
+msgid "Current Users"
+msgstr "Текущие пользователи"
+
+#: templates/distributor.php:74 templates/distributor.php:105
+msgid "Unique ID"
+msgstr "Уникальный ID"
+
+#: templates/distributor.php:76 templates/distributor.php:107
+msgid "City Name"
+msgstr "Название города"
+
+#: templates/distributor.php:78 templates/distributor.php:109 templates/structure-p.php:144
+#: templates/structure-p.php:192
+msgid "Sponsor Name"
+msgstr "Имя спонсора"
+
+#: templates/distributor.php:80 templates/distributor.php:111
+msgid "Action"
+msgstr "Действие"
+
+#: templates/distributor.php:137
+msgid "This user phone already exits!"
+msgstr "Этот телефон уже существует!"
+
+#: templates/distributor.php:147
+msgid "New Distributor register!"
+msgstr "Новый дистрибьютор зарегистрирован!"
+
+#: templates/distributor.php:157
+msgid "Distributor update successful!"
+msgstr "Дистрибьютор успешно обновлен!"
+
+#: templates/distributor.php:192
+msgid "You won't be able to revert this!"
+msgstr "Вы не сможете отменить это!"
+
+#: templates/distributor.php:197
+msgid "Yes"
+msgstr "Да"
+
+#: templates/structure-p.php:72
+msgid "List of reports (Pay)"
+msgstr "Список отчетов (К оплате)"
+
+#: templates/structure-p.php:80 templates/structure-p.php:111
+msgid "File"
+msgstr "Файл"
+
+#: templates/structure-p.php:102
+msgid "List of reports (Payed)"
+msgstr "Список отчетов (Оплачено)"
+
+#: templates/structure-p.php:147 templates/structure-p.php:195
+msgid "DR"
+msgstr "DR"
+
+#: templates/structure-p.php:148 templates/structure-p.php:196
+msgid "SR"
+msgstr "SR"
+
+#: templates/structure-p.php:149 templates/structure-p.php:197
+msgid "MR"
+msgstr "MR"
+
+#: templates/structure-p.php:150 templates/structure-p.php:198
+msgid "BR"
+msgstr "BR"
+
+#: templates/structure-p.php:151 templates/structure-p.php:199
+msgid "BRC"
+msgstr "BRC"
+
+#: templates/structure-p.php:152 templates/structure-p.php:200
+msgid "ALLR"
+msgstr "ALLR"
+
+#: templates/structure-p.php:154
+msgid "Select All"
+msgstr "Выбрать все"
+
+#: templates/structure-p.php:202
+msgid "Pay"
+msgstr "Оплатить"
+
+#: mlm-marketing.php:30
+msgid "Overview"
+msgstr "Обзор"
+
+#: mlm-marketing.php:31
+msgid "Distributor Panel"
+msgstr "Панель дистрибьютора"
+
+#: mlm-marketing.php:32
+msgid "Circulation Panel"
+msgstr "Панель оборота"
+
+#: mlm-marketing.php:39 mlm-marketing.php:40
+msgid "Settings"
+msgstr "Настройки"

@@ -97,9 +97,9 @@ $reward = $datatable->getUserRewardNotification('USER' . $userId)
 
             <label><?php _e('Rank', 'marketing') ?></label>
             <a class="disable"><?= $user[0]->rank; ?></a>
-            <label><?php _e('PCC', 'marketing') ?></label>
+            <label><?php _e('Личный Товарооборот (ЛТ)', 'marketing') ?></label>
             <a class="disable"><?= $reword[0]->pcc; ?></a>
-            <label><?php _e('SCC', 'marketing') ?></label>
+            <label><?php _e('Структурный Товарооброт (СТ)', 'marketing') ?></label>
             <a class="disable"><?= $reword[0]->scc; ?></a>
             <label><?php _e('Direct Reward', 'marketing') ?> </label>
             <a class="disable"><?= $reword[0]->dr; ?></a>
@@ -142,16 +142,16 @@ $reward = $datatable->getUserRewardNotification('USER' . $userId)
             <tr>
                 <th><?php _e('Sl no', 'marketing') ?>.</th>
                 <th><?php _e('Payout Rewards', 'marketing') ?></th>
-                <th><?php _e('Payout Date and Time', 'marketing') ?></th>
-                <th><?php _e('After account balance', 'marketing'); ?></th>
+                <th><?php _e('After account balance', 'marketing') ?></th>
+                <th><?php _e('Payout Date and Time', 'marketing'); ?></th>
             </tr>
             </thead>
             <tfoot>
             <tr>
                 <th><?php _e('Sl no', 'marketing') ?>.</th>
                 <th><?php _e('Payout Rewards', 'marketing') ?></th>
-                <th><?php _e('Payout Date and Time', 'marketing') ?></th>
-                <th><?php _e('After account balance', 'marketing'); ?></th>
+                <th><?php _e('After account balance', 'marketing') ?></th>
+                <th><?php _e('Payout Date and Time', 'marketing'); ?></th>
             </tr>
             </tfoot>
         </table>

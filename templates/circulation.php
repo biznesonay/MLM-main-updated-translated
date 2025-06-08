@@ -84,49 +84,62 @@ $results = $datatable->get_all_transuctions();
             <input type="submit" name="submit" value="Create">
         </form>
     </div>
-    <h3>Transactions Table</h3>
+    <h3>Таблица транзаций</h3>
     <table id="transaction" class="ui celled table" style="width:100%">
-        <thead>
-        <tr>
-            <th><?php _e('Sl no', 'marketing'); ?></th>
-            <th><?php _e('Distributor ID', 'marketing'); ?></th>
-            <th><?php _e('Distributor Name', 'marketing'); ?></th>
-            <th><?php _e('Source', 'marketing'); ?></th>
-            <th><?php _e('Amount', 'marketing'); ?></th>
-            <th><?php _e('Transaction Date', 'marketing'); ?></th>
+    <thead>
+    <tr>
+        <th><?php _e('Sl no', 'marketing'); ?></th>
+        <th><?php _e('Distributor ID', 'marketing'); ?></th>
+        <th><?php _e('Distributor Name', 'marketing'); ?></th>
+        <th><?php _e('Source', 'marketing'); ?></th>
+        <th><?php _e('Original Amount', 'marketing'); ?></th>
+        <th><?php _e('Commission', 'marketing'); ?></th>
+        <th><?php _e('Final Amount', 'marketing'); ?></th>
+        <th><?php _e('Transaction Date', 'marketing'); ?></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php 
+    $i = 1;
+    $timezone = new DateTimeZone('Asia/Almaty');
+    foreach ($results as $result) { 
+        $date = new DateTime();
+        $date->setTimestamp($result->transuction_date);
+        $date->setTimezone($timezone);
+        
+        // Определяем отображение суммы и комиссии
+        $original_amount = $result->original_amount ?: $result->amount;
+        $commission_info = '';
+        if ($result->commission_percent && $result->commission_amount) {
+            $commission_info = $result->commission_percent . '% (' . $result->commission_amount . ' тг)';
+        }
+    ?>
+        <tr id="trr<?= $result->transuction_id; ?>">
+            <td><?= $i; ?></td>
+            <td><?= $result->unique_id; ?></td>
+            <td><?= $result->user_name; ?></td>
+            <td><?= $result->post_id ? __('WooCommerce', 'marketing') : __('direct', 'marketing'); ?></td>
+            <td><?= $original_amount . ' тг'; ?></td>
+            <td><?= $commission_info ?: '-'; ?></td>
+            <td><?= $result->amount . ' тг'; ?></td>
+            <td data-order="<?= $result->transuction_date; ?>"><?= $date->format('d.m.Y H:i:s'); ?></td>
         </tr>
-        </thead>
-        <tbody>
-        <?php 
-        $i = 1;
-        $timezone = new DateTimeZone('Asia/Almaty');
-        foreach ($results as $result) { 
-            $date = new DateTime();
-            $date->setTimestamp($result->transuction_date);
-            $date->setTimezone($timezone);
-        ?>
-            <tr id="trr<?= $result->transuction_id; ?>">
-                <td><?= $i; ?></td>
-                <td><?= $result->unique_id; ?></td>
-                <td><?= $result->user_name; ?></td>
-                <td><?= $result->post_id ? __('site', 'marketing') : __('direct', 'marketing'); ?></td>
-                <td><?= $result->amount . ' тенге'; ?></td>
-                <td data-order="<?= $result->transuction_date; ?>"><?= $date->format('d.m.Y H:i:s'); ?></td>
-            </tr>
-            <?php $i++;
-        } ?>
-        </tbody>
-        <tfoot>
-        <tr>
-            <th><?php _e('Sl no', 'marketing'); ?></th>
-            <th><?php _e('Distributor ID', 'marketing'); ?></th>
-            <th><?php _e('Distributor Name', 'marketing'); ?></th>
-            <th><?php _e('Source', 'marketing'); ?></th>
-            <th><?php _e('Amount', 'marketing'); ?></th>
-            <th><?php _e('Transaction Date', 'marketing'); ?></th>
-        </tr>
-        </tfoot>
-    </table>
+        <?php $i++;
+    } ?>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th><?php _e('Sl no', 'marketing'); ?></th>
+        <th><?php _e('Distributor ID', 'marketing'); ?></th>
+        <th><?php _e('Distributor Name', 'marketing'); ?></th>
+        <th><?php _e('Source', 'marketing'); ?></th>
+        <th><?php _e('Original Amount', 'marketing'); ?></th>
+        <th><?php _e('Commission', 'marketing'); ?></th>
+        <th><?php _e('Final Amount', 'marketing'); ?></th>
+        <th><?php _e('Transaction Date', 'marketing'); ?></th>
+    </tr>
+    </tfoot>
+</table>
 </div>
 
 <?php if (isset($_GET['somerror'])) { ?>
@@ -154,10 +167,10 @@ $results = $datatable->get_all_transuctions();
     jQuery(document).ready(function () {
         jQuery('.ui.dropdown').dropdown();
         jQuery('#transaction').DataTable({
-            order: [[5, 'desc']], // Сортировка по дате по умолчанию
+            order: [[7, 'desc']], // Изменяем на 7, так как дата теперь в 8-й колонке (индекс 7)
             columnDefs: [
                 {
-                    targets: 5, // Колонка с датой
+                    targets: 7, // Изменяем на 7 для колонки с датой
                     type: 'num' // Используем числовую сортировку для timestamp
                 }
             ],

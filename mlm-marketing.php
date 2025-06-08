@@ -3,15 +3,18 @@
 Plugin Name: MLM Marketing
 Plugin URI:  https://biznesonay.kz
 Description: This plugin for multi lavel marketing and rank basis reward.
-Version:     1.0.8.5
+Version:     2.0.1
 Author:      BiznesOnay
 Author URI:  https://biznesonay.kz
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: marketing
+Domain Path: /languages
 */
 
-
-require_once(ABSPATH . 'wp-config.php');
+add_action('plugins_loaded', function() {
+    load_plugin_textdomain('marketing', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});
 
 // Установка часового пояса при загрузке плагина
 add_action('init', function() {
@@ -50,6 +53,8 @@ function mlm_settings_page() {
         update_option('mlm_recaptcha_site_key', sanitize_text_field($_POST['recaptcha_site_key']));
         update_option('mlm_recaptcha_secret_key', sanitize_text_field($_POST['recaptcha_secret_key']));
         update_option('mlm_recaptcha_enabled', isset($_POST['recaptcha_enabled']) ? 'yes' : 'no');
+        // Добавляем сохранение комиссии
+        update_option('mlm_woocommerce_commission', floatval($_POST['woocommerce_commission']));
         echo '<div class="notice notice-success"><p>Настройки сохранены!</p></div>';
     }
     
@@ -58,6 +63,8 @@ function mlm_settings_page() {
     $recaptcha_site_key = get_option('mlm_recaptcha_site_key', '');
     $recaptcha_secret_key = get_option('mlm_recaptcha_secret_key', '');
     $recaptcha_enabled = get_option('mlm_recaptcha_enabled', 'no');
+    // Получаем настройку комиссии
+    $woocommerce_commission = get_option('mlm_woocommerce_commission', '9');
     ?>
     <div class="wrap">
         <h1>MLM Настройки</h1>
@@ -70,6 +77,22 @@ function mlm_settings_page() {
                 <tr>
                     <th>Автоматически обрабатывать заказы</th>
                     <td><input type="checkbox" name="auto_process" <?= $auto_process == 'yes' ? 'checked' : '' ?>></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><h2>Настройки комиссии</h2></th>
+                </tr>
+                <tr>
+                    <th>Комиссия WooCommerce (%)</th>
+                    <td>
+                        <input type="number" name="woocommerce_commission" 
+                               value="<?= $woocommerce_commission ?>" 
+                               min="0" max="100" step="0.1" 
+                               style="width: 100px;">
+                        <p class="description">
+                            Процент комиссии, который будет автоматически вычитаться из суммы заказов WooCommerce.<br>
+                            Например: при комиссии 9% и заказе на 10000 тг, в MLM систему попадет 9100 тг.
+                        </p>
+                    </td>
                 </tr>
                 <tr>
                     <th colspan="2"><h2>Настройки reCAPTCHA</h2></th>
@@ -166,6 +189,18 @@ function create_plugin_database_table()
 
         dbDelta($transaction_table_sql);
     }
+
+    // Добавьте этот код после строки dbDelta($transaction_table_sql);
+$table_name = $wpdb->prefix . 'mlm_transactions';
+$column_exists = $wpdb->get_results("SHOW COLUMNS FROM $table_name LIKE 'commission_percent'");
+
+if (empty($column_exists)) {
+    $wpdb->query("ALTER TABLE $table_name 
+        ADD COLUMN commission_percent DECIMAL(5,2) DEFAULT NULL,
+        ADD COLUMN commission_amount DECIMAL(10,2) DEFAULT NULL,
+        ADD COLUMN original_amount DECIMAL(10,2) DEFAULT NULL
+    ");
+}
 
     if ($wpdb->get_var("show tables like '$mlm_rewards_table'") != $mlm_rewards_table) {
 
@@ -1104,6 +1139,14 @@ function mlm_process_completed_order($order_id) {
     
     // Получаем сумму заказа
     $total = $order->get_total();
+    
+    // Получаем процент комиссии из настроек
+    $commission_percent = floatval(get_option('mlm_woocommerce_commission', 9));
+    
+    // Вычисляем сумму после вычета комиссии
+    $commission_amount = ($total * $commission_percent) / 100;
+    $total_after_commission = $total - $commission_amount;
+    
     $user_unique_id = 'USER' . $user_id;
     
     // Проверяем, есть ли пользователь в MLM системе
@@ -1146,23 +1189,32 @@ function mlm_process_completed_order($order_id) {
         );
     }
     
-    // Обрабатываем транзакцию через RankReward
+    // Обрабатываем транзакцию через RankReward с суммой после вычета комиссии
     include_once plugin_dir_path(__FILE__) . 'services/RankDB.php';
     include_once plugin_dir_path(__FILE__) . 'helpers/RankHelper.php';
     include_once plugin_dir_path(__FILE__) . 'services/Reward.php';
     include_once plugin_dir_path(__FILE__) . 'services/RankReward.php';
     
     $rankReward = new RankReward();
-    $rankReward->calculate($total, $user_unique_id);
+    $rankReward->calculate($total_after_commission, $user_unique_id);
     
-    // Сохраняем post_id для избежания дублирования
-    $wpdb->update(
-        "{$wpdb->prefix}mlm_transactions",
-        array('post_id' => $order_id),
-        array('tran_user_id' => $user_unique_id),
-        array('%d'),
-        array('%s')
-    );
+    // Обновляем транзакцию, добавляя post_id и информацию о комиссии
+    $wpdb->query($wpdb->prepare(
+        "UPDATE {$wpdb->prefix}mlm_transactions 
+         SET post_id = %d, 
+             commission_percent = %f,
+             commission_amount = %f,
+             original_amount = %f
+         WHERE tran_user_id = %s 
+         AND post_id IS NULL
+         ORDER BY id DESC 
+         LIMIT 1",
+        $order_id,
+        $commission_percent,
+        $commission_amount,
+        $total,
+        $user_unique_id
+    ));
 }
 
 // AJAX проверка номера телефона
