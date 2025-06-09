@@ -162,8 +162,16 @@ class WoocommerceIntegrator
 
     private function getUserContentData(int $postId): array
     {
-        $data = ['post_id' => null, 'total_amount' => null, 'user_id' => null, 'fist_name' => null, 'last_name' => null, 'phone' => null, 'city_id' => null, 'email'];
-        $meta = $this->getMetaData($postId);
+        $data = [
+            'post_id'      => null,
+            'total_amount' => null,
+            'user_id'      => null,
+            'fist_name'    => null,
+            'last_name'    => null,
+            'phone'        => null,
+            'city_id'      => null,
+            'email'        => null,
+        ];        $meta = $this->getMetaData($postId);
 
         if (!$meta) {
             return $data;
