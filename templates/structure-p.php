@@ -166,14 +166,18 @@ $payedFiles = $datatable->getAllPayedReportFile();
                     <td><?= $distributor->rank; ?></td>
                     <td><?= $distributor->sponsor_id; ?></td>
                     <td><?= get_user_name($distributor->sponsor_id); ?></td>
-                    <td><?= $distributor->pcc; ?></td>
-                    <td><?= $distributor->scc; ?></td>
-                    <td><?= $distributor->dr; ?></td>
-                    <td><?= $distributor->sr; ?></td>
-                    <td><?= $distributor->mr; ?></td>
-                    <td><?= $distributor->br; ?></td>
-                    <td><?= $distributor->br_car ?? 0; ?></td>
-                    <td><?= (float)$distributor->dr + (float)$distributor->sr + (float)$distributor->mr ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->pcc); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->scc); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->dr); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->sr); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->mr); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->br); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount($distributor->br_car ?? 0); ?></td>
+                    <td style="white-space: nowrap;"><?= mlm_format_amount(
+                        (float)$distributor->dr + 
+                        (float)$distributor->sr + 
+                        (float)$distributor->mr
+                    ) ?></td>
                     <td class="to-select">
                         <input type="checkbox" name="user_id" value="<?= $distributor->unique_id ?>"
                                class="select-item">

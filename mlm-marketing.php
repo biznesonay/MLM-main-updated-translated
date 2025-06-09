@@ -3,7 +3,7 @@
 Plugin Name: MLM Marketing
 Plugin URI:  https://biznesonay.kz
 Description: This plugin for multi lavel marketing and rank basis reward.
-Version:     2.0.2
+Version:     2.0.3
 Author:      BiznesOnay
 Author URI:  https://biznesonay.kz
 License:     GPL2
@@ -423,6 +423,8 @@ function my_enqueued_assets()
     wp_enqueue_script('sweetalert_js', plugin_dir_url(__FILE__) . 'assets/js/sweetalert2.min.js');
 
     wp_enqueue_script('masked_input', plugin_dir_url(__FILE__) . 'assets/js/masked_input.min.js');
+
+    wp_enqueue_script('mlm_number_formatter', plugin_dir_url(__FILE__) . 'assets/js/number-formatter.js', array('jquery'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'frontend_scripts');
@@ -437,6 +439,7 @@ function frontend_scripts()
     wp_enqueue_style('dataTables-semanticui', plugin_dir_url(__FILE__) . 'assets/css/dataTables.semanticui.min.css');
     wp_enqueue_script('jquery-dataTables', plugin_dir_url(__FILE__) . 'assets/js/jquery.dataTables.min.js');
     wp_enqueue_script('dataTables_semanticui', plugin_dir_url(__FILE__) . 'assets/js/dataTables.semanticui.min.js');
+    wp_enqueue_script('mlm_number_formatter', plugin_dir_url(__FILE__) . 'assets/js/number-formatter.js', array('jquery'), '1.0.0', true);
 }
 
 add_action('after_setup_theme', 'add_role_function');
@@ -590,6 +593,17 @@ function getUserReward()
     $reward = $wpdb->get_results($sql, 'ARRAY_A');
     if ($reward) {
         $result = $reward[0];
+        
+        // Добавляем форматированные версии сумм
+        $result['pcc_formatted'] = mlm_format_amount($result['pcc']);
+        $result['scc_formatted'] = mlm_format_amount($result['scc']);
+        $result['dr_formatted'] = mlm_format_amount($result['dr']);
+        $result['sr_formatted'] = mlm_format_amount($result['sr']);
+        $result['mr_formatted'] = mlm_format_amount($result['mr']);
+        
+        // Также добавим форматированную сумму PCC+SCC
+        $pcc_scc_total = (float)$result['pcc'] + (float)$result['scc'];
+        $result['pcc_scc_formatted'] = mlm_format_amount($pcc_scc_total);
     }
 
     echo json_encode($result);
@@ -1247,4 +1261,17 @@ function check_phone_exists() {
     }
     
     wp_send_json(['exists' => $exists > 0]);
+}
+
+/**
+ * Форматирует число с пробелами в качестве разделителей тысяч
+ * @param mixed $number Число для форматирования
+ * @param int $decimals Количество десятичных знаков (по умолчанию 0 для целых сумм)
+ * @return string Отформатированное число
+ */
+function mlm_format_amount($number, $decimals = 0) {
+    if (!is_numeric($number)) {
+        return $number;
+    }
+    return number_format((float)$number, $decimals, '.', ' ');
 }

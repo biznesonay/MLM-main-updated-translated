@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-08 08:38+0000\n"
-"PO-Revision-Date: 2025-06-08 19:22+0500\n"
+"PO-Revision-Date: 2025-06-09 10:02+0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ru\n"
@@ -163,7 +163,7 @@ msgstr "Дата транзакции"
 
 #: shortcodes/profile.php:97 shortcodes/profile2.php:138 templates/rewards-history.php:62
 msgid "Rewards history"
-msgstr "История наград"
+msgstr "История вознаграждений"
 
 #: shortcodes/profile.php:103 shortcodes/profile.php:127 shortcodes/profile2.php:143
 #: shortcodes/profile2.php:151 shortcodes/profile2.php:166 shortcodes/profile2.php:192
@@ -402,7 +402,7 @@ msgstr "Панель дистрибьютора"
 #: templates/distributor.php:23 templates/family-tree.php:22 templates/rank.php:14
 #: templates/structure-p.php:44 mlm-marketing.php:32
 msgid "Commodity Circulation Panel"
-msgstr "Панель оборота товара"
+msgstr "Панель товарооборота"
 
 #: templates/rewards-history.php:21 templates/circulation.php:29
 #: templates/distributor.php:28 templates/family-tree.php:27 templates/rank.php:19
@@ -414,7 +414,7 @@ msgstr "Панель структуры"
 #: templates/distributor.php:38 templates/family-tree.php:37 templates/rank.php:29
 #: templates/structure-p.php:59 mlm-marketing.php:35
 msgid "Rewards History"
-msgstr "История наград"
+msgstr "История вознаграждений"
 
 #: templates/rewards-history.php:45
 msgid "History of getting rewards by distributors"
@@ -452,7 +452,7 @@ msgstr "Выберите дистрибьютора"
 
 #: templates/circulation.php:65
 msgid "Personal Circulation Commodity"
-msgstr "Личный оборот товара"
+msgstr "Личный товарооборот"
 
 #: templates/circulation.php:69
 msgid "Additional expenses"
@@ -604,7 +604,7 @@ msgstr "Панель дистрибьютора"
 
 #: mlm-marketing.php:32
 msgid "Circulation Panel"
-msgstr "Панель оборота"
+msgstr "Панель товарооборота"
 
 #: mlm-marketing.php:39 mlm-marketing.php:40
 msgid "Settings"

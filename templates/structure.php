@@ -533,13 +533,17 @@ $user = $datatable->get_all_cond_data('mlm_users',$condition);
                         <td><?= $distributor->rank; ?></td>
                         <td><?= $distributor->sponsor_id; ?></td>
                         <td><?= get_user_name($distributor->sponsor_id); ?></td>
-						<td><?= $distributor->pcc; ?></td>
-						<td><?= $distributor->scc; ?></td>
-						<td><?= $distributor->dr; ?></td>
-						<td><?= $distributor->sr; ?></td>
-						<td><?= $distributor->mr; ?></td>
-						<td><?= $distributor->br; ?></td>
-						<td><?= (float)$distributor->dr + (float)$distributor->sr + (float)$distributor->mr ?></td>
+						<td><?= mlm_format_amount($distributor->pcc); ?></td>
+						<td><?= mlm_format_amount($distributor->scc); ?></td>
+						<td><?= mlm_format_amount($distributor->dr); ?></td>
+						<td><?= mlm_format_amount($distributor->sr); ?></td>
+						<td><?= mlm_format_amount($distributor->mr); ?></td>
+						<td><?= mlm_format_amount($distributor->br); ?></td>
+						<td><?= mlm_format_amount(
+							(float)$distributor->dr + 
+							(float)$distributor->sr + 
+							(float)$distributor->mr
+						) ?></td>
 					</tr>
 				<?php $i++; } ?>
 			</tbody>

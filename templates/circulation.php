@@ -81,7 +81,7 @@ $results = $datatable->get_all_transuctions();
             <input type="number" name="mlm_circulation_commodity" id="amount" required readonly>
 
             <input type="hidden" name="action" value="mlm_circulation_commodity">
-            <input type="submit" name="submit" value="Create">
+            <input type="submit" name="submit" value="Создать">
         </form>
     </div>
     <h3>Таблица транзаций</h3>
@@ -110,7 +110,7 @@ $results = $datatable->get_all_transuctions();
             <td><?= $result->unique_id; ?></td>
             <td><?= $result->user_name; ?></td>
             <td><?= $result->post_id ? __('site', 'marketing') : __('direct', 'marketing'); ?></td>
-            <td><?= $result->amount . ' тенге'; ?></td>
+            <td><?= mlm_format_amount($result->amount) . ' тенге'; ?></td>
             <td data-order="<?= $result->transuction_date; ?>"><?= $date->format('d.m.Y H:i:s'); ?></td>
         </tr>
         <?php $i++;

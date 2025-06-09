@@ -98,17 +98,17 @@ $reward = $datatable->getUserRewardNotification('USER' . $userId)
             <label><?php _e('Rank', 'marketing') ?></label>
             <a class="disable"><?= $user[0]->rank; ?></a>
             <label><?php _e('Личный Товарооборот (ЛТ)', 'marketing') ?></label>
-            <a class="disable"><?= $reword[0]->pcc; ?></a>
+            <a class="disable"><?= mlm_format_amount($reword[0]->pcc); ?></a>
             <label><?php _e('Структурный Товарооброт (СТ)', 'marketing') ?></label>
-            <a class="disable"><?= $reword[0]->scc; ?></a>
+            <a class="disable"><?= mlm_format_amount($reword[0]->scc); ?></a>
             <label><?php _e('Direct Reward', 'marketing') ?> </label>
-            <a class="disable"><?= $reword[0]->dr; ?></a>
+            <a class="disable"><?= mlm_format_amount($reword[0]->dr); ?></a>
             <label><?php _e('Structural Reward', 'marketing') ?> </label>
-            <a class="disable"><?= $reword[0]->sr; ?></a>
+            <a class="disable"><?= mlm_format_amount($reword[0]->sr); ?></a>
             <label><?php _e('Management Reward', 'marketing') ?> </label>
-            <a class="disable"><?= $reword[0]->mr; ?></a>
+            <a class="disable"><?= mlm_format_amount($reword[0]->mr); ?></a>
             <label><?php _e('All Rewards', 'marketing') ?> </label>
-            <a class="disable"><?= (float)$reword[0]->dr + (float)$reword[0]->sr + (float)$reword[0]->mr; ?></a>
+            <a class="disable"><?= mlm_format_amount((float)$reword[0]->dr + (float)$reword[0]->sr + (float)$reword[0]->mr); ?></a>
         </form>
     </div>
 
@@ -275,7 +275,16 @@ $reward = $datatable->getUserRewardNotification('USER' . $userId)
             },
             columns: [
                 {data: 'id', orderable: true},
-                {data: 'amount', orderable: true},
+                {
+            data: 'amount', 
+            orderable: true,
+            render: function(data, type, row) {
+                if (type === 'display') {
+                    return formatAmount(data) + ' тенге';
+                }
+                return data;
+            }
+        },
                 {
                     data: 'date',
                     orderable: true,
@@ -313,7 +322,16 @@ $reward = $datatable->getUserRewardNotification('USER' . $userId)
             },
             columns: [
                 {data: 'id', orderable: true},
-                {data: 'amount', orderable: true},
+                {
+            data: 'amount', 
+            orderable: true,
+            render: function(data, type, row) {
+                if (type === 'display') {
+                    return formatAmount(data) + ' тенге';
+                }
+                return data;
+            }
+        },
                 {data: 'after_rewords_balance', orderable: true},
                 {data: 'created_at', orderable: true},
             ],

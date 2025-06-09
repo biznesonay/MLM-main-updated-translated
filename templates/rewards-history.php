@@ -84,8 +84,8 @@ $rewardsHistory = $datatable->getAllRewardsHistory();
                 <td><?= $i; ?></td>
                 <td><?= $item->user_id; ?></td>
                 <td><?= $item->user_name; ?></td>
-                <td><?= $item->amount; ?></td>
-                <td><?= $item->after_rewords_balance; ?></td>
+                <td><?= mlm_format_amount($item->amount); ?></td>
+                <td><?= mlm_format_amount($item->after_rewords_balance); ?></td>
                 <td><?= $date->format('d.m.Y H:i:s') ?></td>
             </tr>
             <?php $i++; } ?>

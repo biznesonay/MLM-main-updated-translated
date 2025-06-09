@@ -1,0 +1,8 @@
+function formatAmount(amount, decimals = 0) {
+    if (!amount || isNaN(amount)) return amount;
+    const num = parseFloat(amount);
+    const formatted = num.toFixed(decimals);
+    const parts = formatted.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return parts.join('.');
+}
