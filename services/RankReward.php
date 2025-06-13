@@ -472,21 +472,45 @@ class RankReward
         $newBrBalance = $totalBalance + $userPrevBrBalance;
 
         // Бонусное вознаграждение (BR) уведомление
-        if ($days <= 84) {
-            $message = null;
+if ($days <= 84) {
+    $message = null;
+    
+    // Текущая сумма PCC+SCC (уже рассчитана выше в функции)
+    $currentAmount = (float)$reward['pcc'] + (float)$reward['scc'];
 
-            if ($rank == 7 && $totalBalance >= 3000000) {
-                $message = 'У Вас есть шанс выиграть путевку на сумму 400 тысяч тенге! Осталось набрать: 4млн минус существующая сумма PCC+SCC тенге!';
-            } elseif ($rank == 8 && $totalBalance >= 8000000) {
-                $message = 'У Вас есть шанс выиграть путевку на сумму 1 миллион тенге! Осталось набрать: 10млн минус существующая сумма PCC+SCC тенге!';
-            } elseif ($rank == 9 && $totalBalance >= 15000000) {
-                $message = 'У Вас есть шанс выиграть путевку на сумму 2 миллиона тенге! Осталось набрать: 20млн минус существующая сумма PCC+SCC тенге!';
-            }
-
-            if ($message) {
-                RankDB::createBrNotification($userId, 4000000, $message);
-            }
+    if ($rank == 7 && $totalBalance >= 3000000) {
+        $targetAmount = 4000000;
+        $remaining = $targetAmount - $currentAmount;
+        
+        if ($remaining > 0) {
+            $message = 'У Вас есть шанс выиграть путевку на сумму 400 тысяч тенге! ' .
+                      'Текущий товарооборот: ' . number_format($currentAmount, 0, '.', ' ') . ' тенге. ' .
+                      'Осталось набрать: ' . number_format($remaining, 0, '.', ' ') . ' тенге!';
         }
+    } elseif ($rank == 8 && $totalBalance >= 8000000) {
+        $targetAmount = 10000000;
+        $remaining = $targetAmount - $currentAmount;
+        
+        if ($remaining > 0) {
+            $message = 'У Вас есть шанс выиграть путевку на сумму 1 миллион тенге! ' .
+                      'Текущий товарооборот: ' . number_format($currentAmount, 0, '.', ' ') . ' тенге. ' .
+                      'Осталось набрать: ' . number_format($remaining, 0, '.', ' ') . ' тенге!';
+        }
+    } elseif ($rank == 9 && $totalBalance >= 15000000) {
+        $targetAmount = 20000000;
+        $remaining = $targetAmount - $currentAmount;
+        
+        if ($remaining > 0) {
+            $message = 'У Вас есть шанс выиграть путевку на сумму 2 миллиона тенге! ' .
+                      'Текущий товарооборот: ' . number_format($currentAmount, 0, '.', ' ') . ' тенге. ' .
+                      'Осталось набрать: ' . number_format($remaining, 0, '.', ' ') . ' тенге!';
+        }
+    }
+
+    if ($message) {
+        RankDB::createBrNotification($userId, 4000000, $message);
+    }
+}
 
         // Бонусное вознаграждение машины
         if ($rank == 9 && $days <= 168) {

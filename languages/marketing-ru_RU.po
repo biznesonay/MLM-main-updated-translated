@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-08 08:38+0000\n"
-"PO-Revision-Date: 2025-06-09 10:02+0500\n"
+"PO-Revision-Date: 2025-06-11 16:31+0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: ru\n"
@@ -184,7 +184,7 @@ msgstr "ID пользователя"
 #: shortcodes/profile2.php:152 templates/rewards-history.php:70
 #: templates/rewards-history.php:98
 msgid "Payout Rewards"
-msgstr "Выплата наград"
+msgstr "Выплата вознаграждений"
 
 #: shortcodes/profile.php:106 shortcodes/profile.php:130 shortcodes/profile2.php:145
 #: shortcodes/profile2.php:153 templates/rewards-history.php:72
